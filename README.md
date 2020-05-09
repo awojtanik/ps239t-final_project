@@ -16,6 +16,7 @@ democracy and the ruing party. In the end, I find no statistically-significant c
 1. 01_analysis.pdf: knitted version of RMD file.
 2. Final presentation.ppt: Lightning talk slides
 3. Graphs and Maps (x12)
+4. BF_shapefile: Burkina Faso shapefile
 
 #### Code/
 1. 01_analysis.R: R script for the project
