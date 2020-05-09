@@ -37,7 +37,7 @@ library("sf")
 #The data also includes a dummy variable for whether or not defections occurred, as well as province-level covariates, including ethnicity, language, urban/rural, and some data from the 2008 Afrobarometer survey on % of respondents who reported support for democracy and % of respondents who claimed they did not trust the ruling party.
 #The goal of the project is to (a) display and map data on defections and (b) determine whether the distribution of defections by provinces is correlated with any of these province-level covariates.
 ```{r}
-setwd("C:/Users/awojt/Documents/Berkeley/Classes Spring 2020/Computational Methods/ps239t-final-project/Code")
+setwd("C:/Users/awojt/Documents/Berkeley/Classes Spring 2020/Computational Methods/ps239t-final-project/Data")
 provdata <- read.csv("Province data.csv")
 ```
 #Here's some specs on the data
