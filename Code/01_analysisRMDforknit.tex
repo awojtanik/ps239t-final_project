@@ -1,0 +1,1114 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Final project - Wojtanik},
+            pdfauthor={Wojtanik},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Final project - Wojtanik}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Wojtanik}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{5/9/2020}
+
+
+\begin{document}
+\maketitle
+
+\#Initial setup
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# remove all objects}
+\KeywordTok{rm}\NormalTok{(}\DataTypeTok{list=}\KeywordTok{ls}\NormalTok{())}
+
+\CommentTok{\# Load packages }
+\KeywordTok{library}\NormalTok{(pacman)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'pacman' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pacman}\OperatorTok{::}\KeywordTok{p\_unload}\NormalTok{(all)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## The following packages have been unloaded:
+## pacman
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(pacman)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'pacman' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{p\_load}\NormalTok{(tidyverse, data.table, rmarkdown, knitr, tinytex, magrittr,}
+\NormalTok{       gplots, viridis, RColorBrewer, scales, grDevices, graphics,}
+\NormalTok{       mapproj, ggmap, rgdal, tmap, maptools, tmaptools, foreign, skimr, lubridate}
+\NormalTok{       )}
+
+\CommentTok{\#This package helps me read in shapefiles}
+\KeywordTok{library}\NormalTok{(}\StringTok{"sf"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'sf' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## Linking to GEOS 3.6.1, GDAL 2.2.3, PROJ 4.9.3
+\end{verbatim}
+
+\hypertarget{section}{%
+\section{----}\label{section}}
+
+\#PART ONE: Reading, Developing, and Cleaning the Data
+
+\#First I read in my primary data of interest on provinces in Burkina
+Faso \#The primary variable of interest (the DV) is the \# of defections
+per province that occurred during a mass defection of 75+ party
+officials who left the party in January 2014 and formed the basis for a
+new opposition party, which was eventually swept to power after BF
+President Compaore's ouster in October 2014. \#The data also includes a
+dummy variable for whether or not defections occurred, as well as
+province-level covariates, including ethnicity, language, urban/rural,
+and some data from the 2008 Afrobarometer survey on \% of respondents
+who reported support for democracy and \% of respondents who claimed
+they did not trust the ruling party. \#The goal of the project is to (a)
+display and map data on defections and (b) determine whether the
+distribution of defections by provinces is correlated with any of these
+province-level covariates.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"C:/Users/awojt/Documents/Berkeley/Classes Spring 2020/Computational Methods/ps239t{-}final{-}project/Data"}\NormalTok{)}
+\NormalTok{provdata <{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"Province data.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#Here's some specs on the data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(provdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Province variable (unit of analysis)}
+\KeywordTok{class}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{ï..province)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Defector data (outcome variable)}
+\KeywordTok{class}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Sample of covariates}
+\KeywordTok{class}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{primary\_ethnicity)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{percent\_demsupport2008)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Running dim reveals the data has 45 rows (provinces) and 9 columns (variables)}
+\KeywordTok{dim}\NormalTok{(provdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 45  9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#The primary variable of interest is the \# of defectors by province. A basic histogram reveals that most provinces had 1{-}2 defectors, but some had far more)}
+\KeywordTok{hist}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Viewing the data reveals that the provinces with the highest \# of defectors were Kadiogo, Yatenga, and Sanmatenga}
+\KeywordTok{View}\NormalTok{(provdata)}
+\CommentTok{\#Here\textquotesingle{}s a summary of all the variables}
+\KeywordTok{summary}\NormalTok{(provdata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      ï..province               region   defector_number  binary_defector 
+##  Bale      : 1   Boucle de Mouhoun: 6   Min.   : 0.000   Min.   :0.0000  
+##  Bam       : 1   Est              : 5   1st Qu.: 0.000   1st Qu.:0.0000  
+##  Banwa     : 1   Centre-Ouest     : 4   Median : 1.000   Median :1.0000  
+##  Bazega    : 1   Nord             : 4   Mean   : 1.511   Mean   :0.6889  
+##  Bougouriba: 1   Sahel            : 4   3rd Qu.: 2.000   3rd Qu.:1.0000  
+##  Boulgou   : 1   Sud-Ouest        : 4   Max.   :10.000   Max.   :1.0000  
+##  (Other)   :39   (Other)          :18                                    
+##      urban         primary_language  primary_ethnicity
+##  Min.   :0.0000   Moore    :22      Mossi     :22     
+##  1st Qu.:0.0000   Gulmacera: 3      Gourmatche: 3     
+##  Median :0.0000   Bissa    : 2      Bissa     : 2     
+##  Mean   :0.1111   Bobo     : 2      Bobo      : 2     
+##  3rd Qu.:0.0000   Dagari   : 2      Dagari    : 2     
+##  Max.   :1.0000   Fulfude  : 2      Gourounsi : 2     
+##                   (Other)  :12      (Other)   :12     
+##  percent_demsupport2008 percent_donottrust2008
+##  Min.   :25.00          Min.   : 6.25         
+##  1st Qu.:50.00          1st Qu.:20.00         
+##  Median :62.50          Median :31.25         
+##  Mean   :60.97          Mean   :29.94         
+##  3rd Qu.:75.00          3rd Qu.:38.12         
+##  Max.   :90.00          Max.   :57.14         
+##  NA's   :5              NA's   :5
+\end{verbatim}
+
+\#The provdata dataset did not fall magically out of the sky. It had to
+be created by merging data from a variety of sources. \#The first is
+data on 68 of the 75 defectors for which I have data on their home
+province (I lacked data on home province on 7 of them). This data comes
+from a signed letter by the 75 defectors when they announced their
+resignation: \url{https://lefaso.net/spip.php?article57333} . \#From
+this I created a new csv file with data on the first and last names of
+the defectors and their reported province
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#See this data below}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"C:/Users/awojt/Documents/Berkeley/Classes Spring 2020/Computational Methods/ps239t{-}final{-}project/Data"}\NormalTok{)}
+\NormalTok{defectordata <{-}}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"defector\_data.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\#Some specs on the data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(defectordata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     ï..first_name last_name   Province
+## 1   Flakie Victor     Shafo       Bale
+## 2          Yimeon  Sawadogo        Bam
+## 3          Drissa    Konate Bougouriba
+## 4    Abdoul Karim  Ouattara Bougouriba
+## 5 Domba Jean Marc      Palm Bougouriba
+## 6       Z. Maxime      Some Bougouriba
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(defectordata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "data.frame"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(defectordata}\OperatorTok{$}\NormalTok{Province)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "factor"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(defectordata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 75  3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{View}\NormalTok{(defectordata)}
+\KeywordTok{summary}\NormalTok{(defectordata) }\CommentTok{\#P.S. Ouedraogo is one of the most common last names in BF; this also shows that Kadiogo has the most defectors (and there are 7 whose province is unknown)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        ï..first_name     last_name        Province 
+##  Abdoulaye    : 2    Ouedraogo:10   Kadiogo   :10  
+##  Abdoul Karim : 1    Sawadogo : 6             : 7  
+##  Aboua        : 1    Some     : 4   Yatenga   : 7  
+##  Alassane     : 1    Ouattara : 3   Sanmatenga: 5  
+##  Alassane Bala: 1    Hien     : 2   Bougouriba: 4  
+##  Amand R.P.   : 1    Konate   : 2   Boulkiemde: 4  
+##  (Other)      :68    (Other)  :48   (Other)   :38
+\end{verbatim}
+
+\#From this defector data, I created a column in the main province data
+(provdata) titled defector\_number, which adds the number of defectors
+by province.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Here we see that there were 68 total defectors.}
+\KeywordTok{sum}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 68
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Summary stats reveal the mean, median, and quartiles for the defection data}
+\KeywordTok{summary}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   0.000   0.000   1.000   1.511   2.000  10.000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#A histogram reveals that most provinces had only 1{-}2 defectors, but some (e.g., Kadiogo, Yatenga, and Sanmatenga) had a lot.}
+\KeywordTok{hist}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\#The province data also includes several additional columns, including:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#1) province: the names of the 45 provinces in BF}
+\KeywordTok{head}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{ï..province)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] Bale       Bam        Banwa      Bazega     Bougouriba Boulgou   
+## 45 Levels: Bale Bam Banwa Bazega Bougouriba Boulgou Boulkiemde ... Zoundweogo
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#2) region: the region (next largest administrative unit) for each province}
+\KeywordTok{summary}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{region)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Boucle de Mouhoun          Cascades            Centre        Centre-Est 
+##                 6                 2                 1                 3 
+##       Centre-Nord      Centre-Ouest        Centre-Sud               Est 
+##                 3                 4                 3                 5 
+##     Hauts-Bassins              Nord   Plateau-Central             Sahel 
+##                 3                 4                 3                 4 
+##         Sud-Ouest 
+##                 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#3) binary\_defector: a binary variable that reveals whether or not the province experienced defections}
+\KeywordTok{summary}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{binary\_defector)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.0000  0.0000  1.0000  0.6889  1.0000  1.0000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#4) urban: another dichotomous variable coded whether the province is urban/rural. (It is coded as urban if it has a city of at least 50,000, rural otherwise)}
+\KeywordTok{sum}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{urban)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#5) primary\_language: factor variable for the predominant language spoken in the province (assembled from Afrobarometer data and other sources)}
+\KeywordTok{summary}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{primary\_language)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     Bissa      Bobo    Dagari   Fulfude Gourounsi Gulmacera  Karaboro 
+##         2         2         2         2         2         3         1 
+##      Lobi     Marka     Moore      Samo   Senoufo    Sonrai     Yanan 
+##         2         2        22         1         2         1         1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#6) primary\_ethnicity: factor variable for predominant ethnicity of residents in provinces (ibid)}
+\KeywordTok{summary}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{primary\_ethnicity)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Bissa       Bobo     Dagari Gourmatche  Gourounsi   Karaboro 
+##          2          2          2          3          2          1 
+##       Lobi      Marka      Mossi       Peul       Samo    Senoufo 
+##          2          2         22          2          1          2 
+##     Sonrai      Yanan 
+##          1          1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#7) percent\_demsupport2008: integer data on the \% of residents who claimed that they supported democracy from the 2008 Afrobarometer survey data (the latest survey with province{-}level data before the 2014 defection)}
+\CommentTok{\#Note that I constructed this variable by merging and cleaning data from the original survey (see below)}
+\KeywordTok{summary}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{percent\_demsupport2008)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   25.00   50.00   62.50   60.97   75.00   90.00       5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Note that 5 provinces were not surveyed so are recorded as missing}
+\CommentTok{\#8) percent\_donottrust2008: integer data on the \% of residents who claimed in the 2008 Afrobarometer survey that they did not trust the ruling party}
+\KeywordTok{summary}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{percent\_demsupport2008)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   25.00   50.00   62.50   60.97   75.00   90.00       5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Note that I also constructed this variable by merging and cleaning data from the original survey (see below)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{section-1}{%
+\section{-----}\label{section-1}}
+
+\#PART ONE ADDENDUM: How I constructed the percent\_demsupport2008 and
+percent\_donottrust2008 variables
+
+\#I constructed the two Afrobarometer variables by adapting them from
+the original survey data \#First I read in the data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(haven)}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"C:/Users/awojt/Documents/Berkeley/Classes Spring 2020/Computational Methods/ps239t{-}final{-}project/Data"}\NormalTok{)}
+\NormalTok{afro2008data <{-}}\StringTok{ }\KeywordTok{read.spss}\NormalTok{(}\StringTok{"bfo\_r4\_data.sav"}\NormalTok{, }\DataTypeTok{to.data.frame =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in read.spss("bfo_r4_data.sav", to.data.frame = TRUE):
+## bfo_r4_data.sav: Unrecognized record type 7, subtype 8 encountered in
+## system file
+\end{verbatim}
+
+\begin{verbatim}
+## re-encoding from CP1252
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in read.spss("bfo_r4_data.sav", to.data.frame = TRUE): Undeclared
+## level(s) 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+## 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52,
+## 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71,
+## 72, 73, 75, 76, 77, 78, 80, 84, 85, 87, 89, 90, 95, 99 added in variable:
+## Q1
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in read.spss("bfo_r4_data.sav", to.data.frame = TRUE): Undeclared
+## level(s) 1, 2, 3, 4, 5, 6, 7 added in variable: Q88F
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in read.spss("bfo_r4_data.sav", to.data.frame = TRUE): Undeclared
+## level(s) 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 20, 22, 40, 50 added in
+## variable: Q96
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in read.spss("bfo_r4_data.sav", to.data.frame = TRUE): Undeclared
+## level(s) 25, 26, 27, 28, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+## 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61,
+## 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+## 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99,
+## 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 114, 115, 118,
+## 119, 120, 121, 122, 123, 124, 125, 126, 128, 129, 133, 135, 137, 138, 140,
+## 143, 145, 147, 150, 154, 178, 184, 211, 224, 485 added in variable: LENGTH
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in read.spss("bfo_r4_data.sav", to.data.frame = TRUE): Undeclared
+## level(s) 22, 24, 26, 27, 28, 29, 30, 31, 32, 43 added in variable: Q111
+\end{verbatim}
+
+\#Then I kept only the questions that I wanted, created a new dataset
+titled afro2008datanew
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{afro2008dataupdate <{-}}\StringTok{ }\KeywordTok{subset}\NormalTok{(afro2008data, }\DataTypeTok{select =} \KeywordTok{c}\NormalTok{(REGION, PROVINCE, DISTRICT, Q3, Q29A, Q29B, Q29C, Q30, Q31, Q32, Q34, Q35, Q37, Q38, Q40A, Q40B, Q42A, Q42B, Q42C, Q42D, Q43, Q44A, Q45B, Q49A, Q49E, Q49F, Q79, Q88E, Q89, Q90, Q97, Q101, Q102)) }
+\KeywordTok{View}\NormalTok{(afro2008dataupdate)}
+\end{Highlighting}
+\end{Shaded}
+
+\#From here I created some new variables using mutate()
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{afro2008dataupdate }\OperatorTok{\%<>\%}
+\StringTok{  }\CommentTok{\#produces new logical variable based on Q30 (do you support democracy?)}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{demsupport =} \KeywordTok{ifelse}\NormalTok{(Q30 }\OperatorTok{==}\StringTok{ "STATEMENT 1: Democracy preferable."}\NormalTok{, T, F)) }\OperatorTok{\%>\%}
+\StringTok{  }\CommentTok{\#converts Q89 (what is highest level of education you have received?) to numeric}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{education =} \KeywordTok{as.numeric}\NormalTok{(Q89)) }\OperatorTok{\%>\%}
+\StringTok{  }\CommentTok{\#converts Q49E (how much do you trust the ruling party?) into numeric}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{rulingpartytrust =} \KeywordTok{as.numeric}\NormalTok{(Q49E))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{then-i-checked-for-missing-data}{%
+\section{Then I checked for missing
+data}\label{then-i-checked-for-missing-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Remove white space}
+\NormalTok{afro2008dataupdate }\OperatorTok{\%<>\%}
+\StringTok{  }\KeywordTok{mutate\_if}\NormalTok{(is.character, }\KeywordTok{list}\NormalTok{(str\_trim))}
+\CommentTok{\# Check for empty cells}
+\NormalTok{afro2008dataupdate }\OperatorTok{\%>\%}
+\StringTok{  }\CommentTok{\# Keep only character variables }
+\StringTok{  }\KeywordTok{select\_if}\NormalTok{(is.character) }\OperatorTok{\%>\%}
+\StringTok{  }\CommentTok{\# Recode character variables as 1 if cell is empty }
+\StringTok{  }\KeywordTok{mutate\_all}\NormalTok{(}\KeywordTok{list}\NormalTok{(}\OperatorTok{\textasciitilde{}}\KeywordTok{ifelse}\NormalTok{(.}\OperatorTok{==}\StringTok{""}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{))) }\OperatorTok{\%>\%}
+\StringTok{  }\CommentTok{\# Add up empty cells for each character variable }
+\StringTok{  }\KeywordTok{summarise\_all}\NormalTok{(sum, }\DataTypeTok{na.rm=}\NormalTok{T) }\OperatorTok{\%>\%}
+\StringTok{  }\CommentTok{\# Transpose data for visibility }
+\StringTok{  }\KeywordTok{t}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]
+\end{verbatim}
+
+\#Then I generated summary statistics for the variables of interest,
+sorted by province:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# I found the mean of the "rulingpartytrust" variable by province to get a sense of where the ruling party is more/less trusted.}
+\NormalTok{afro2008dataupdate }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{group\_by}\NormalTok{(PROVINCE) }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{rulingpartytrust\_mean =} \KeywordTok{mean}\NormalTok{(rulingpartytrust, }\DataTypeTok{na.rm=}\NormalTok{T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 40 x 2
+##    PROVINCE                         rulingpartytrust_mean
+##    <fct>                                            <dbl>
+##  1 "BAM                           "                  3.94
+##  2 "BANWA                         "                  4.35
+##  3 "BAZEGA                        "                  4.75
+##  4 "BOULGOU                       "                  4.58
+##  5 "BOULKIEMDE                    "                  4.22
+##  6 "COMOE                         "                  4.1 
+##  7 "GANZOURGOU                    "                  5.1 
+##  8 "GNAGNA                        "                  4.75
+##  9 "GOURMA                        "                  5   
+## 10 "HOUET                         "                  3.85
+## # ... with 30 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# I also found the sum of total respondents who claim they supported democracy (699)}
+\NormalTok{afro2008dataupdate }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\KeywordTok{sum}\NormalTok{(demsupport}\OperatorTok{==}\NormalTok{T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   sum(demsupport == T)
+## 1                  699
+\end{verbatim}
+
+\hypertarget{i-then-generated-the-of-respondents-who-claim-they-supported-democracy-for-each-province.}{%
+\section{I then generated the \# of respondents who claim they supported
+democracy for each
+province.}\label{i-then-generated-the-of-respondents-who-claim-they-supported-democracy-for-each-province.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{afro2008dataupdate }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{group\_by}\NormalTok{(PROVINCE) }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\KeywordTok{sum}\NormalTok{(demsupport}\OperatorTok{==}\NormalTok{T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 40 x 2
+##    PROVINCE                         `sum(demsupport == T)`
+##    <fct>                                             <int>
+##  1 "BAM                           "                     12
+##  2 "BANWA                         "                     27
+##  3 "BAZEGA                        "                     11
+##  4 "BOULGOU                       "                     28
+##  5 "BOULKIEMDE                    "                     36
+##  6 "COMOE                         "                     20
+##  7 "GANZOURGOU                    "                     17
+##  8 "GNAGNA                        "                     14
+##  9 "GOURMA                        "                      6
+## 10 "HOUET                         "                     42
+## # ... with 30 more rows
+\end{verbatim}
+
+\#Then I found the \% of respondents who claimed they support democracy
+for each province. This became the basis for the percent\_demsupport2008
+variable in the main province data!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{percentdemsupport <{-}}\StringTok{ }\NormalTok{afro2008dataupdate }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{group\_by}\NormalTok{(PROVINCE) }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{((}\KeywordTok{sum}\NormalTok{(demsupport}\OperatorTok{==}\NormalTok{T)}\OperatorTok{/}\KeywordTok{n}\NormalTok{())}\OperatorTok{*}\DecValTok{100}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(percentdemsupport)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 40 x 2
+##    PROVINCE                         `(sum(demsupport == T)/n()) * 100`
+##    <fct>                                                         <dbl>
+##  1 "BAM                           "                               75  
+##  2 "BANWA                         "                               67.5
+##  3 "BAZEGA                        "                               68.8
+##  4 "BOULGOU                       "                               70  
+##  5 "BOULKIEMDE                    "                               90  
+##  6 "COMOE                         "                               50  
+##  7 "GANZOURGOU                    "                               42.5
+##  8 "GNAGNA                        "                               43.8
+##  9 "GOURMA                        "                               25  
+## 10 "HOUET                         "                               52.5
+## # ... with 30 more rows
+\end{verbatim}
+
+\#I did the same for the \% of respondents who do not ``trust'' the
+ruling party, by province (respondents who claimed that they trusted the
+ruling party ``not at all'' OR ``just a little'', meaning a response of
+2 or 3 in my new rulingpartytrust variable) \#This became the
+percent\_donottrust2008 variable in provdata!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{percentdonottrust <{-}}\StringTok{ }\NormalTok{afro2008dataupdate }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{group\_by}\NormalTok{(PROVINCE) }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{((}\KeywordTok{sum}\NormalTok{(rulingpartytrust}\OperatorTok{<}\DecValTok{4}\NormalTok{)}\OperatorTok{/}\KeywordTok{n}\NormalTok{())}\OperatorTok{*}\DecValTok{100}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(percentdonottrust)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 40 x 2
+##    PROVINCE                         `(sum(rulingpartytrust < 4)/n()) * 100`
+##    <fct>                                                              <dbl>
+##  1 "BAM                           "                                    31.2
+##  2 "BANWA                         "                                    22.5
+##  3 "BAZEGA                        "                                    18.8
+##  4 "BOULGOU                       "                                    22.5
+##  5 "BOULKIEMDE                    "                                    22.5
+##  6 "COMOE                         "                                    32.5
+##  7 "GANZOURGOU                    "                                    10  
+##  8 "GNAGNA                        "                                    15.6
+##  9 "GOURMA                        "                                    12.5
+## 10 "HOUET                         "                                    51.2
+## # ... with 30 more rows
+\end{verbatim}
+
+\#For fun, I could also calculate the percentage of Burkinabe who do not
+``trust'' the ruling party based on education levels:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{afro2008dataupdate }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{group\_by}\NormalTok{(Q89) }\OperatorTok{\%>\%}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\KeywordTok{sum}\NormalTok{(rulingpartytrust}\OperatorTok{<}\DecValTok{4}\NormalTok{)}\OperatorTok{/}\KeywordTok{n}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 9 x 2
+##   Q89                                         `sum(rulingpartytrust < 4)/n~
+##   <fct>                                                               <dbl>
+## 1 No formal schooling                                                 0.244
+## 2 Informal schooling only                                             0.293
+## 3 Some primary schooling                                              0.351
+## 4 Primary school completed                                            0.371
+## 5 Some secondary school/high school                                   0.521
+## 6 Secondary school completed/high school                              0.591
+## 7 Post-secondary qualifications, not univers~                         0.875
+## 8 Some university                                                     0.536
+## 9 University completed                                                0.6
+\end{verbatim}
+
+\#This suggests that better educated people have less trust in the
+ruling party!
+
+\hypertarget{section-2}{%
+\section{------}\label{section-2}}
+
+\#PART TWO: Data Visualization I (Graphs and Plots)
+
+\#set dimensions and load themes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\NormalTok{opts\_chunk}\OperatorTok{$}\KeywordTok{set}\NormalTok{(}\DataTypeTok{fig.width=}\DecValTok{12}\NormalTok{, }\DataTypeTok{fig.height=}\DecValTok{8}\NormalTok{)}
+\KeywordTok{source}\NormalTok{(}\StringTok{"C:/Users/awojt/Documents/Berkeley/Classes Spring 2020/Computational Methods/PS239T\_Spring2020 new/PS239T\_Spring2020/09\_r{-}analysis{-}visualization/06\_setup/visualisation.R"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\#In this section, I set out to create some basic bivariate and
+multivariate plots to display some of my data \#First, I plot the \# of
+defectors per province (note that I flip the x and y-axis (h/t Julia)
+and change the labels and scale):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plotbyprovince <{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ provdata, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{reorder}\NormalTok{(ï..province, defector\_number), }\DataTypeTok{y =}\NormalTok{ defector\_number)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom\_bar}\NormalTok{(}\DataTypeTok{fill=}\StringTok{"purple"}\NormalTok{, }\DataTypeTok{stat=}\StringTok{"identity"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=}\StringTok{"Defectors by Province, Jan 2014"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Province"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Number of Defectors"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{coord\_flip}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{scale\_y\_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{10}\NormalTok{))}
+\NormalTok{plotbyprovince}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+\#Second, I test the \# of defections against a few covariates. For
+example, I plot the \# of defectors by primary ethnicity:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plotbyethnicity <{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ provdata, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ primary\_ethnicity, }\DataTypeTok{y =}\NormalTok{ defector\_number)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom\_bar}\NormalTok{(}\DataTypeTok{fill=}\StringTok{"red"}\NormalTok{, }\DataTypeTok{stat=}\StringTok{"identity"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=}\StringTok{"Defectors by Ethnicity, Jan 2014"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Primary Ethnicity of Home Province"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Number of Defectors"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{scale\_y\_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{45}\NormalTok{))}
+\NormalTok{plotbyethnicity}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-19-1.pdf}
+\#Here we see that ethnic Mossi account for most of the defectors. This
+is not surprising, however, because it is the largest ethnic group in
+Burkina Faso. \#We see a similar trend with primary\_language, with
+Moore speakers (the language of the Mossi) as most prominent:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plotbylanguage <{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ provdata, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ primary\_language, }\DataTypeTok{y =}\NormalTok{ defector\_number)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom\_bar}\NormalTok{(}\DataTypeTok{fill=}\StringTok{"blue"}\NormalTok{, }\DataTypeTok{stat=}\StringTok{"identity"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=}\StringTok{"Defectors by Primary Language, Jan 2014"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Primary Language of Home Province"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Number of Defectors"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{scale\_y\_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{45}\NormalTok{))}
+\NormalTok{plotbylanguage}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\#Third, I look at defections against the ruling party support data in a
+multivariate plot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#First I create a new logical variable (defectors\_yes\_or\_no) to stand{-}in for whether a province had defectors or not.}
+\NormalTok{provdata }\OperatorTok{\%<>\%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Defections =} \KeywordTok{ifelse}\NormalTok{(binary\_defector}\OperatorTok{==}\DecValTok{1}\NormalTok{, T, F))}
+
+\CommentTok{\#Then I use this new variable as the "color" for the bar graph that maps \% of respondents who do not trust ruling party by province}
+\NormalTok{plotbyrpsupport <{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ provdata, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{reorder}\NormalTok{(ï..province, percent\_donottrust2008), }\DataTypeTok{y =}\NormalTok{ percent\_donottrust2008, }\DataTypeTok{by =}\NormalTok{ percent\_donottrust2008, }\DataTypeTok{fill =}\NormalTok{ Defections, }\DataTypeTok{color =}\NormalTok{ Defections)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom\_bar}\NormalTok{(}\DataTypeTok{colour=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{stat=}\StringTok{"identity"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=} \StringTok{"Levels of Disapproval of Ruling Party by Province"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Province"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"\% of Respondents Who Do Not Trust Ruling Party"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{coord\_flip}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{scale\_y\_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{55}\NormalTok{, }\DecValTok{60}\NormalTok{))}
+\NormalTok{plotbyrpsupport}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 5 rows containing missing values (position_stack).
+\end{verbatim}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-21-1.pdf}
+
+\#Fourth, I also do the same for the variable that tracks \% of
+respondents who support democracy
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plotbydemsupport <{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ provdata, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{reorder}\NormalTok{(ï..province, percent\_demsupport2008), }\DataTypeTok{y =}\NormalTok{ percent\_demsupport2008, }\DataTypeTok{by =}\NormalTok{ percent\_demsupport2008, }\DataTypeTok{fill =}\NormalTok{ Defections, }\DataTypeTok{color =}\NormalTok{ Defections)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom\_bar}\NormalTok{(}\DataTypeTok{colour=}\StringTok{"white"}\NormalTok{, }\DataTypeTok{stat=}\StringTok{"identity"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=} \StringTok{"Levels of Support for Democracy by Province"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Province"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"\% of Respondents Who Support Democracy"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{coord\_flip}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{scale\_y\_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{35}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{55}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{65}\NormalTok{, }\DecValTok{70}\NormalTok{, }\DecValTok{75}\NormalTok{, }\DecValTok{80}\NormalTok{, }\DecValTok{85}\NormalTok{, }\DecValTok{90}\NormalTok{))}
+\NormalTok{plotbydemsupport}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 5 rows containing missing values (position_stack).
+\end{verbatim}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\#Finally, I also create a boxplot that shows the divide between urban
+and rural areas. Here we see a pretty big bump in the \# of defectors if
+the province is largely urban.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plotbyurban <{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(provdata, }\DataTypeTok{fill =} \StringTok{"Defectors"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom\_boxplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(urban, defector\_number, }\DataTypeTok{group =}\NormalTok{ urban, }\DataTypeTok{fill =} \StringTok{"Defectors"}\NormalTok{)) }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title=}\StringTok{"Defectors by Urban/Rural, Jan 2014"}\NormalTok{, }\DataTypeTok{x=}\StringTok{"Urban/Rural"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Number of Defectors"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{scale\_y\_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{)) }\OperatorTok{+}\StringTok{ }\KeywordTok{scale\_x\_continuous}\NormalTok{(}\DataTypeTok{breaks =} \DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{)}
+\NormalTok{plotbyurban}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{01_analysisRMDforknit_files/figure-latex/unnamed-chunk-23-1.pdf}
+
+\#What have we learned? Defectors seem to come largely from ethnic
+Mossi, Moore-speaking, and urban provinces, but there is no obvious
+correlation between local levels of support for democracy or disapproval
+of the ruling party and defections. \#In other words, it is not clear
+whether defectors are ``reflecting'' the attitudes of the population in
+their home provinces (with the exception of maybe Kadiogo (where the
+capital Ouagadougou is located), the outlier) \#To test the significance
+of these variables, I ran a series of simply linear regressions (on both
+\# of defectors and a binary of whether or not there were defections in
+the province)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lm}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{provdata}\OperatorTok{$}\NormalTok{percent\_donottrust2008)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = provdata$defector_number ~ provdata$percent_donottrust2008)
+## 
+## Coefficients:
+##                     (Intercept)  provdata$percent_donottrust2008  
+##                         0.07679                          0.04837
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lm}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{binary\_defector }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{provdata}\OperatorTok{$}\NormalTok{percent\_donottrust2008)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = provdata$binary_defector ~ provdata$percent_donottrust2008)
+## 
+## Coefficients:
+##                     (Intercept)  provdata$percent_donottrust2008  
+##                        0.452724                         0.008259
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Note that the relationship is also not significant if we test by predominant ethnicity or language, whether the province was primarily urban/rural, or based on \% who support democracy in the province.}
+\KeywordTok{lm}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{provdata}\OperatorTok{$}\NormalTok{primary\_ethnicity)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = provdata$defector_number ~ provdata$primary_ethnicity)
+## 
+## Coefficients:
+##                          (Intercept)  
+##                            1.500e+00  
+##       provdata$primary_ethnicityBobo  
+##                           -1.000e+00  
+##     provdata$primary_ethnicityDagari  
+##                            2.000e+00  
+## provdata$primary_ethnicityGourmatche  
+##                           -8.333e-01  
+##  provdata$primary_ethnicityGourounsi  
+##                           -1.000e+00  
+##   provdata$primary_ethnicityKaraboro  
+##                            5.000e-01  
+##       provdata$primary_ethnicityLobi  
+##                            1.000e+00  
+##      provdata$primary_ethnicityMarka  
+##                           -1.500e+00  
+##      provdata$primary_ethnicityMossi  
+##                            3.636e-01  
+##       provdata$primary_ethnicityPeul  
+##                           -1.000e+00  
+##       provdata$primary_ethnicitySamo  
+##                           -1.500e+00  
+##    provdata$primary_ethnicitySenoufo  
+##                            3.365e-15  
+##     provdata$primary_ethnicitySonrai  
+##                           -1.500e+00  
+##      provdata$primary_ethnicityYanan  
+##                            5.000e-01
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lm}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{provdata}\OperatorTok{$}\NormalTok{primary\_language)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = provdata$defector_number ~ provdata$primary_language)
+## 
+## Coefficients:
+##                        (Intercept)       provdata$primary_languageBobo  
+##                          1.500e+00                          -1.000e+00  
+##    provdata$primary_languageDagari    provdata$primary_languageFulfude  
+##                          2.000e+00                          -1.000e+00  
+## provdata$primary_languageGourounsi  provdata$primary_languageGulmacera  
+##                         -1.000e+00                          -8.333e-01  
+##  provdata$primary_languageKaraboro       provdata$primary_languageLobi  
+##                          5.000e-01                           1.000e+00  
+##     provdata$primary_languageMarka      provdata$primary_languageMoore  
+##                         -1.500e+00                           3.636e-01  
+##      provdata$primary_languageSamo    provdata$primary_languageSenoufo  
+##                         -1.500e+00                           2.259e-15  
+##    provdata$primary_languageSonrai      provdata$primary_languageYanan  
+##                         -1.500e+00                           5.000e-01
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lm}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{provdata}\OperatorTok{$}\NormalTok{urban)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = provdata$defector_number ~ provdata$urban)
+## 
+## Coefficients:
+##    (Intercept)  provdata$urban  
+##          1.025           4.375
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lm}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{defector\_number }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{provdata}\OperatorTok{$}\NormalTok{percent\_demsupport2008)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = provdata$defector_number ~ provdata$percent_demsupport2008)
+## 
+## Coefficients:
+##                     (Intercept)  provdata$percent_demsupport2008  
+##                         2.28580                         -0.01248
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{lm}\NormalTok{(provdata}\OperatorTok{$}\NormalTok{binary\_defector }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{provdata}\OperatorTok{$}\NormalTok{percent\_demsupport2008)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = provdata$binary_defector ~ provdata$percent_demsupport2008)
+## 
+## Coefficients:
+##                     (Intercept)  provdata$percent_demsupport2008  
+##                        1.307459                        -0.009963
+\end{verbatim}
+
+\#None are significant (although of course I didn't spend much time on
+the specifications)
+
+\hypertarget{section-3}{%
+\section{----}\label{section-3}}
+
+
+\end{document}
